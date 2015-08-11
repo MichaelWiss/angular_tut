@@ -1,8 +1,7 @@
-angular.module('flapperNews', ['ui.router', 'templates'])
+angular.module('flapperNews', ['ui.router'])
 .config([
 	'$stateProvider',
-	'$urlRouterProvider',
-	function($stateProvider, $urlRouteProvider) {
+	'$urlRouterProvider', function($stateProvider, $urlRouteProvider) {
 
 		$stateProvider
 		.state('home', {
@@ -16,11 +15,11 @@ angular.module('flapperNews', ['ui.router', 'templates'])
         controller: 'PostsCtrl'
 });
 		$urlRouterProvider.otherwise('home');
-	}])
 
+}])
 .factory('posts', [function(){
-	  var o = {
-          posts: []
+  var o = {
+    posts: []
   };
   return o;
 }])

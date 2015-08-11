@@ -1,18 +1,20 @@
 <html>
 <head>
   <title>Flapper News</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="app.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
 </head>
-<body ng-app="flapperNews">
+<body ng-app="flapperNews"  ng-controller="MainCtrl">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
            <ui-view></ui-view>
-         </div>
-  </div>     
+       
+      
   
       <div class="page-header">
         <h1>Flapper News</h1>
@@ -58,10 +60,11 @@
   <script type="text/ng-template" id="/home.html">
     <div class="page-header">
       <h1>Flapper News</h1>
+      <span>
+       <a href="#/posts/{{$index}}">Comments</a>
+      </span>
     </div> 
-<span>
-  <a href="#/posts/{{$index}}">Comments</a>
-</span>
+
   </script>
 
   <script type="text/ng-template" id="/posts.html">
